@@ -1,0 +1,14 @@
+#INPUT_TYPE     // Defines how the program will read in data. 0 = Default, qubit types will be taken in to account. 1 = All qubits standard, only uses values within Matrix.
+1
+
+#QUBITS  //  Defines the types of each qubit in system, following float values define frequencies. 
+0, 1.0  // 0 = standard qubit, single float for frequency.
+0, 0.5
+1, 0.6, 0.7, 0.8    // 1 = coaxamon, (r_c, r_in, r_out) used to calculate frequency. 
+2, 0.3, 0.4, 1, 0.8     // 2 = rectanglemon, (H1, L1, H2, L2) used to calculate frequency.
+
+#MATRIX     // This Matrix defines couplings between Qubits. Must be either upper triangular or self-transpose. If central diagonal elements are non-zero, these will overide the frequencies defined or calculated from above list.
+0.1, 0.2, 0.1, 0.5
+0.2, 0.1, 0.3, 0
+0.1, 0.3, 0.1, 0.4
+0.5, 0, 0.4, 0.1
